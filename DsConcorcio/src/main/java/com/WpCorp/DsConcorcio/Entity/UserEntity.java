@@ -21,19 +21,26 @@ import java.util.UUID;
 public class UserEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    @Column(name = "Name", length = 12, nullable = false)
-    private String Name;
-    @Column(name = "Email", length = 12, nullable = false)
+    @Column(name = "name", length = 15, nullable = false)
+    private String name;
+    @Column(name = "Email", length = 15, nullable = false)
     @Email
-    private String Email;
-    @Column(name = "Password", length = 10, nullable = false)
-    private String Password;
+    private String email;
+    @Column(name = "Password", length = 255, nullable = false)
+    private String password;
     @ManyToMany
     @JoinTable(name = "tb_users_motocycles",
             joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "car_id"))
+            inverseJoinColumns = @JoinColumn(name = "motor_id"))
     private Set<MotorcyclerEntity> motocycles = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(name = "tb_users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<RoleEntity> roles = new HashSet<>();
+
 
 }
