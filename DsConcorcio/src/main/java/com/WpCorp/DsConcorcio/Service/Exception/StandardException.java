@@ -1,15 +1,13 @@
 package com.WpCorp.DsConcorcio.Service.Exception;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.Instant;
 
 @Data
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class StandardException {
     private Instant timeStamp;

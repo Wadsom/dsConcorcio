@@ -1,11 +1,14 @@
 package com.WpCorp.DsConcorcio.Service;
 
+import com.WpCorp.DsConcorcio.DTO.MotorDTO;
 import com.WpCorp.DsConcorcio.DTO.RegisterMotorcycle;
-import com.WpCorp.DsConcorcio.DTO.RespMotorDTO;
+
+import java.net.URI;
+import java.util.Set;
 
 public interface MotorcycleService {
 
-    public RespMotorDTO createNewMotorcycle(RegisterMotorcycle registerMotorcycle);
-
+    public URI createNewMotorcycle(RegisterMotorcycle registerMotorcycle);
+    public Set<MotorDTO> getAllMotorcycles();
 
 }
