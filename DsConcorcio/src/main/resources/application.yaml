@@ -1,0 +1,20 @@
+spring:
+  application:
+    name=DsConcorcio
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dsConcorcio
+    username: postgres
+    password: 123456
+  jpa:
+    hibernate:
+    ddl-auto: update
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    jdbc:
+      lob.non-contextual-creation: true
+    properties:
+     hibernate:
+     show_sql: true
+at:
+ authUser:
+  jwtExpiration: 144000
+  secretKey: "doendeEstaFranchesca68ic5CmHVKvTv5i9NEGnL9rP1G8F35Wk4ew6eybXeDYedkujxqDkOpMZPKjtgEMYSghfYk30oHo8ZTvknuQOpLL65j1JHh10bMhVhTxQgyZAWkoVQvxRsQn5MxoTZSfowgRsC2drd8IkUxEFr6ukgsZJd3BFwBdOAOKl56IY4z6pwud5sGrHvVj0mHQKi6sOcR008NEnwO763F41NC1gOmaM3uYd4QPeA38EfUy7qwcGNk5BgVyxEZnbyA6SC6mGBGsZksdQ76a4ADtQuTGdqHTt21JCuLxkATdnozGqBhemFbKfUeppOqO3EMLgVIMm7hgX7QkaotqC75oiSfyW9IFQRng2QLxS4RkPqd3wY9msGbh9LyewMJZL77LHJelNBM0taDhkKwgDZi4OTquhqT925G6QChaWHIhYnWktdIADjUzlnVBsuIB0I5Q6teYSl1WGoqwfZH5yy3KjZ230Vsre7gUTZTwVENmKOS7LikRi"
