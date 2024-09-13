@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -28,5 +30,10 @@ public class UserEntity implements Serializable {
     private String Email;
     @Column(name = "Password", length = 10, nullable = false)
     private String Password;
+    @ManyToMany
+    @JoinTable(name = "tb_users_motocycles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "car_id"))
+    private Set<MotorcyclerEntity> motocycles = new HashSet<>();
 
 }

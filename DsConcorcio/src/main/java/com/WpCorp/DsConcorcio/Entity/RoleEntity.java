@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.GrantedAuthority;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -17,7 +17,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 @Table(name = "tb_role")
-public class RoleEntity implements Serializable, GrantedAuthority {
+public class RoleEntity implements Serializable {
+    //    GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
@@ -26,7 +27,7 @@ public class RoleEntity implements Serializable, GrantedAuthority {
     private RoleType type;
 
 
-    @Override
+    //@Override
     public String getAuthority() {
         return this.type.name();
     }

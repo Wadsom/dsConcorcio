@@ -14,6 +14,9 @@ spring:
     properties:
      hibernate:
      show_sql: true
+  output:
+    ansi:
+      enabled: Always
 at:
  authUser:
   jwtExpiration: 144000
